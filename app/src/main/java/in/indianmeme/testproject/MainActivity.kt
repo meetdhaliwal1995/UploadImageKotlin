@@ -4,14 +4,12 @@ import `in`.indianmeme.testproject.Data.GetDataViewModel
 import `in`.indianmeme.testproject.Data.ImagesItem
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
-import okhttp3.internal.toImmutableList
 
 class MainActivity : AppCompatActivity(), AdapterImage.ItemCallBack {
 
@@ -29,7 +27,7 @@ class MainActivity : AppCompatActivity(), AdapterImage.ItemCallBack {
         recycler_view.layoutManager = linearLayoutManager
         recycler_view.adapter = adapter
 
-        val endless = object: EndlessRecyclerViewScrollListener(linearLayoutManager) {
+        val endless = object : EndlessRecyclerViewScrollListener(linearLayoutManager) {
             override fun onLoadMore(page: Int, totalItemsCount: Int, view: RecyclerView?) {
                 offset++
                 Snackbar.make(recycler_view, "Loading more...", Snackbar.LENGTH_SHORT).show()

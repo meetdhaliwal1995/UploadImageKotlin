@@ -1,12 +1,11 @@
 package `in`.indianmeme.testproject.Data
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.gson.JsonElement
 import java.io.File
 
-abstract class GetDataViewModel : ViewModel() {
+class GetDataViewModel : ViewModel() {
 
     val readAllData: MutableLiveData<List<ImagesItem>>
     val readResponse: MutableLiveData<JsonElement>

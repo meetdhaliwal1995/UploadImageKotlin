@@ -64,10 +64,7 @@ class GetDataRepo {
 
                 }
 
-                override fun onResponse(
-                    call: Call<JsonElement>,
-                    response: Response<JsonElement>
-                ) {
+                override fun onResponse(call: Call<JsonElement>, response: Response<JsonElement>) {
                     phoneUploadData.value = response.body()
                 }
             })
